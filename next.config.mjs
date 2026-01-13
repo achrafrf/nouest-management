@@ -1,13 +1,6 @@
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const LOADER = path.resolve(__dirname, 'src/visual-edits/component-tagger-loader.js');
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // 1. خلي التصاور يخدموا من أي بلاصة
   images: {
     remotePatterns: [
       {
@@ -20,21 +13,18 @@ const nextConfig = {
       },
     ],
   },
-  outputFileTracingRoot: path.resolve(__dirname, '../../'),
+
+  // 2. حيدنا outputFileTracingRoot حيت هو لي داير المشكل
+
+  // 3. تجاوز الأخطاء البسيطة فـ الـ Build باش يدوز دغيا
   typescript: {
     ignoreBuildErrors: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
-  turbopack: {
-    rules: {
-      "*.{jsx,tsx}": {
-        loaders: [LOADER]
-      }
-    }
-  }
+
+  // 4. حيدنا الـ Turbopack rules والـ LOADER حيت متعلقين بـ Orchids لي مسحنا
 };
 
 export default nextConfig;
-// Orchids restart: 1768137708605
