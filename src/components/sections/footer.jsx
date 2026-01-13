@@ -26,7 +26,7 @@ const Footer = () => {
             <div className="mb-10 flex items-center gap-4 group cursor-pointer">
               <div className="relative w-[60px] h-[60px] overflow-hidden rounded-xl border border-gray-100 p-2 group-hover:border-[#800020]/20 transition-all">
                 <Image 
-                  src="/logo.png" 
+                  src="/image.png" 
                   alt="Nouest Management Logo"
                   fill
                   className="object-contain p-1"

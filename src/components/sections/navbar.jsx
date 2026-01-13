@@ -87,7 +87,7 @@ const Navbar = () => {
         {/* Logo */}
         <a href="/" className="relative block w-[126px] h-[100px] shrink-0">
           <Image
-            src="/logo.png"
+            src="/image.png"
             alt="Ironis Logo"
             fill
             className="object-contain"
