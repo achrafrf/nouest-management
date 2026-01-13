@@ -242,14 +242,16 @@ const Navbar = () => {
 
           <div className="mt-auto pt-8 flex flex-col gap-4">
             <span className="text-center text-[14px] text-muted-foreground uppercase tracking-widest">Besoin d'un devis ?</span>
-            <a
-              href="/contact-us"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 bg-primary text-primary-foreground h-[58px] rounded-full text-[16px] font-semibold"
-            >
-              Let’s work together
-              <ArrowUpRight className="w-5 h-5" />
-            </a>
+             <button
+            onClick={() => setIsModalOpen(true)}
+            className="group relative flex items-center justify-center gap-2 bg-primary hover:bg-foreground text-primary-foreground hover:text-background px-8 h-[58px] rounded-full text-[16px] font-semibold transition-all duration-300"
+          >
+              Demander un devis
+            <div className="relative w-5 h-5 flex items-center justify-center overflow-hidden">
+               <ArrowUpRight className="w-5 h-5 absolute transition-all duration-300 group-hover:-translate-y-5 group-hover:translate-x-5" />
+               <ArrowUpRight className="w-5 h-5 absolute -translate-x-5 translate-y-5 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
+            </div>
+          </button>
           </div>
         </div>
       </div>
